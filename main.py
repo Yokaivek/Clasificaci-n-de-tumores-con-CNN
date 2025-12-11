@@ -5,12 +5,16 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import os
+from pathlib import Path
 
 # ==========================================
 # CONFIGURACIÓN DEL MODELO
 # ==========================================
-# Ruta relativa dentro del proyecto
-MODEL_PATH = os.environ.get("MODEL_PATH", "model_files/model_0.904.keras")
+# Obtiene la ruta del directorio actual (donde está main.py)
+BASE_DIR = Path(__file__).resolve().parent
+
+# Construye la ruta al archivo del modelo
+MODEL_PATH = BASE_DIR / "model_files" / "model_0.904.keras"
 
 # Cargar modelo
 model = tf.keras.models.load_model(MODEL_PATH)
