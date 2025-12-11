@@ -4,4 +4,4 @@ pillow
 tensorflow
 numpy
 python-multipart
-pandas
+
